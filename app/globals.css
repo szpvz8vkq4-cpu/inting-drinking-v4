@@ -1011,18 +1011,24 @@ textarea.neon-input {
 .icon-bubble img {
   position: absolute;
   inset: 0;
+  z-index: 2;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 .icon-bubble span {
+  display: none;
   position: relative;
   z-index: 1;
   color: #f0e6d2;
   font-size: 10px;
   font-weight: 950;
   text-align: center;
+}
+
+.icon-bubble.is-fallback span {
+  display: block;
 }
 
 .build-board {

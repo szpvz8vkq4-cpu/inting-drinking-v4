@@ -596,9 +596,22 @@ function getSummaryText(state) {
 
 
 function IconBubble({ src, alt, label, size = 'normal' }) {
+  const [failed, setFailed] = useState(false)
+
   return (
-    <div className={`icon-bubble icon-bubble-${size}`} title={label || alt}>
-      <img src={src} alt={alt} loading="lazy" onError={(event) => { event.currentTarget.style.display = 'none' }} />
+    <div
+      className={`icon-bubble icon-bubble-${size} ${failed ? 'is-fallback' : ''}`}
+      title={label || alt}
+    >
+      {!failed ? (
+        <img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          onError={() => setFailed(true)}
+        />
+      ) : null}
+
       <span>{label ? label.slice(0, 2).toUpperCase() : '??'}</span>
     </div>
   )
