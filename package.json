@@ -1,0 +1,18 @@
+{
+  "name": "raftel-v4-9-bravery-rune-page",
+  "version": "4.9.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "vercel-build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "2.105.4",
+    "next": "15.5.18",
+    "react": "19.2.6",
+    "react-dom": "19.2.6"
+  },
+  "devDependencies": {}
+}
